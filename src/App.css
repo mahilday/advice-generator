@@ -21,8 +21,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  flex-direction: column;
   text-align: center;
+  height: max-content;
+  transition: all .5s ease;
 }
 
 .container {
@@ -94,12 +95,36 @@
   animation: rotate 1s forwards;
 }
 
+.textLoading {
+  animation: textLoading 1s forwards;
+}
+
+.advice{
+  transform: scale(1);
+  transition: all .5s ease-in-out;
+}
+
+.advice:hover{
+  transform: scale(1.10);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes textLoading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
   }
 }
 
@@ -129,7 +154,7 @@
 
   .text-xl {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 700;
   }
   .lines:before,
   .lines:after {

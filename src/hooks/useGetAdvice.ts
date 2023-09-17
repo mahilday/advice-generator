@@ -12,10 +12,14 @@ const useGetAdvice = () => {
 
   const getAdvice = async () => {
     startLoading();
-    const res = await fetch("https://api.adviceslip.com/advice");
-    const adviceResp = await res.json();
-    setAdvice(adviceResp.slip);
-    stopLoading();
+    try {
+      const res = await fetch("https://api.adviceslip.com/advice");
+      const adviceResp = await res.json();
+      setAdvice(adviceResp.slip);
+      stopLoading();
+    } catch (error) {
+      console.log("Something went wrong: ", error);
+    }
   };
 
   useEffect(() => {

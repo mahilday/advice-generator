@@ -12,7 +12,7 @@ function App() {
         <section className="card_bg">
           <div className="container">
             <h4 className="neon_green topText">Advice #{advice?.id}</h4>
-            <p className="text-xl">“{advice?.advice}”</p>
+            <p className={`text-xl advice ${isLoading ? "textLoading" : ""}`}>“{advice?.advice}”</p>
             <section className="lines">
               <div>
                 <img src={lines} alt="lines" />
