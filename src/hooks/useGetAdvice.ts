@@ -15,10 +15,13 @@ const useGetAdvice = () => {
     try {
       const res = await fetch("https://api.adviceslip.com/advice");
       const adviceResp = await res.json();
-      setAdvice(adviceResp.slip);
-      stopLoading();
+      setTimeout(() => {
+        setAdvice(adviceResp.slip);
+        stopLoading();
+      }, 800);
     } catch (error) {
       console.log("Something went wrong: ", error);
+      stopLoading();
     }
   };
 

@@ -92,7 +92,7 @@
 }
 
 .dieRotate {
-  animation: rotate 1s forwards;
+  animation: rotate 1s infinite;
 }
 
 .textLoading {

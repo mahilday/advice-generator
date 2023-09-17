@@ -9,10 +9,12 @@ function App() {
   return (
     <>
       <div className="bg">
-        <section className="card_bg">
+        <section className={`card_bg`}>
           <div className="container">
             <h4 className="neon_green topText">Advice #{advice?.id}</h4>
-            <p className={`text-xl advice ${isLoading ? "textLoading" : ""}`}>“{advice?.advice}”</p>
+            <p className={`text-xl advice ${isLoading ? "textLoading" : ""}`}>
+              “{isLoading? "Getting advice ☺ ...":advice?.advice}”
+            </p>
             <section className="lines">
               <div>
                 <img src={lines} alt="lines" />
